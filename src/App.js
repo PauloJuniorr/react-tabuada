@@ -1,26 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import HelloWorld from './HelloWorld';
+import MeuComponente from './MeuComponente';
+import MeuComponente2 from './MeuComponente2';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    var linhas = [];
+    const numero = 2;
+
+      for(let i = 1; i <= 10; i++) {
+      linhas.push(<MeuComponente2 primeiroNumero = {numero} segundoNumero = {i} resultado = {i * numero} />);
+    }
+    return <div>{linhas}</div>;
+
+    // return <div><HelloWorld/></div>
+    // return <div><MeuComponente nome='Paulo'/></div>
+    
+  }
 }
 
 export default App;
